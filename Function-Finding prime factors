@@ -1,0 +1,43 @@
+# Finding a given number is prime or not
+# 'p=1' if the given number is prime otherwise 'p=0'
+def findprime(my_num):
+  '''
+  Function to return the prime number
+  '''
+  try:
+    fp=int(my_num)
+  except:
+    return("Enter an integral value")
+    quit()
+  p=0
+  if fp==2:
+      p=1
+  else:
+    for i in range(2,fp):
+      if fp%i==0:
+        p=0
+        break
+      else:
+        p=1
+  return(p)
+
+# Finding the prime factors for a given number
+def primefac(pri_fac):
+  '''
+  Function to return the prime factors 
+  '''
+  try:
+    pf=int(pri_fac)
+  except:
+    return("Enter an integral value")
+    quit()
+  replist=[]
+  i=2
+  while pf!=1:
+      while findprime(i)==1 and pf%i==0:
+        pf=pf/i
+        replist.append(i)
+        if pf==1:
+          break
+      i+=1
+  return(replist)
