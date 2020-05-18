@@ -1,0 +1,15 @@
+def revnum3(my_dat):
+  '''
+  Function to reverse a number
+  '''
+  try:
+    r_num=int(my_dat)
+  except:
+    return(my_dat)
+    quit()
+  my_num=0
+  while r_num>0:
+    in_num=r_num%10
+    my_num=(my_num*10)+in_num
+    r_num=r_num//10
+  return(my_num)
