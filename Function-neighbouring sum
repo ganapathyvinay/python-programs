@@ -1,0 +1,23 @@
+#a[i-1] + a[i+1] < a[i]
+def neigh_sum(*args):
+  #giv_stg=input("Enter the integral values seperated by space: ")
+  #my_lst=giv_stg.split()
+  my_lst=[]
+  try:
+    for j in args:
+      j=int(j)
+      my_lst.append(j)
+  except:
+    return("Enter integral values: ")
+    quit()
+  all_lst=[]
+  my_ans=[]
+  for i in range(1,len(my_lst)-1):
+    chk=my_lst[i-1]+my_lst[i+1]
+    if chk<my_lst[i]:
+      my_ans.append(my_lst[i-1])
+      my_ans.append(my_lst[i])
+      my_ans.append(my_lst[i+1])
+      all_lst.append(my_ans)
+      my_ans=[]
+  return(all_lst)
