@@ -1,0 +1,21 @@
+# Finding a given number is prime or not
+def findprime(my_num):
+  '''
+  Function to return the prime number
+  '''
+  try:
+    fp=int(my_num)
+  except:
+    return("Enter an integral value")
+    quit()
+  p=str()
+  if fp==2:
+      p=str(fp)+" is a prime number"
+  else:
+    for i in range(2,fp):
+      if fp%i==0:
+        p=str(fp)+" is not a prime number"
+        break
+      else:
+        p=str(fp)+" is a prime number"
+  return(p)
